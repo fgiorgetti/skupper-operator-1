@@ -46,6 +46,8 @@ if ${INTERACTIVE}; then
 	
 	read_var SKUPPER_ROUTER_TAG "Router image tag" true ""
 	read_var SKUPPER_CONTROL_TAG "Control plane images tag" true ""
+	read_var PROMETHEUS_TAG "Prometheus image tag" true ""
+	read_var OAUTH_PROXY_TAG "OAuth Proxy image tag" true ""
 fi
 
 errors=()
@@ -61,6 +63,8 @@ export SITE_CONTROLLER_SHA=`getImageSHA quay.io/fgiorgetti/site-controller:${SKU
 export SERVICE_CONTROLLER_SHA=`getImageSHA quay.io/fgiorgetti/service-controller:${SKUPPER_CONTROL_TAG}`
 export CONFIG_SYNC_SHA=`getImageSHA quay.io/fgiorgetti/config-sync:${SKUPPER_CONTROL_TAG}`
 export FLOW_COLLECTOR_SHA=`getImageSHA quay.io/fgiorgetti/flow-collector:${SKUPPER_CONTROL_TAG}`
+export PROMETHEUS_SHA=`getImageSHA quay.io/prometheus/prometheus:${PROMETHEUS_TAG}`
+export OAUTH_PROXY_SHA=`getImageSHA quay.io/openshift/origin-oauth-proxy:${OAUTH_PROXY_TAG}`
 
 echo
 echo
@@ -80,6 +84,8 @@ printf "%-25s: %s\n" "Site Controller SHA" "${SITE_CONTROLLER_SHA}"
 printf "%-25s: %s\n" "Service Controller SHA" "${SERVICE_CONTROLLER_SHA}"
 printf "%-25s: %s\n" "Config Sync SHA" "${CONFIG_SYNC_SHA}"
 printf "%-25s: %s\n" "Flow Collector SHA" "${FLOW_COLLECTOR_SHA}"
+printf "%-25s: %s\n" "Prometheus SHA" "${PROMETHEUS_SHA}"
+printf "%-25s: %s\n" "OAuth Proxy SHA" "${OAUTH_PROXY_SHA}"
 echo
 echo
 
