@@ -205,17 +205,17 @@ spec:
                     fieldRef:
                       fieldPath: metadata.annotations['olm.targetNamespaces']
                 - name: QDROUTERD_IMAGE
-                  value: quay.io/fgiorgetti/skupper-router@sha256:4f44d5a5d08f9419324d73f4e108246212c43c9cb1a5f5a5dceac2fce4a0bcea
+                  value: bla
                 - name: SKUPPER_SERVICE_CONTROLLER_IMAGE
-                  value: quay.io/fgiorgetti/service-controller@sha256:c3326888b6612f3a3ef524ff4650e430a011fcc25c26cd6f79d9440bb0b267df
+                  value: bla
                 - name: SKUPPER_CONFIG_SYNC_IMAGE
-                  value: quay.io/fgiorgetti/config-sync@sha256:3041b2cdb9f3804242283e398be14a491da6009257f97ade0fe6debaa3c2b2c3
+                  value: bla
                 - name: SKUPPER_FLOW_COLLECTOR_IMAGE
-                  value: quay.io/fgiorgetti/flow-collector@sha256:d3d6604417e5b14856860677a4c7cfd5d704dbfc2cbf0b9dce3a806656c2b11f
+                  value: bla
                 - name: PROMETHEUS_SERVER_IMAGE
-                  value: quay.io/prometheus/prometheus@sha256:d2ab0a27783fd4ad96a8853e2847b99a0be0043687b8a5d1ebfb2dd3fa4fd1b8
+                  value: bla
                 - name: OAUTH_PROXY_IMAGE
-                  value: quay.io/openshift/origin-oauth-proxy@sha256:a7dff785d821acc4b972d94964947713fade45f007dedb5deee17a2869bf5d24
+                  value: bla
                 image: quay.io/fgiorgetti/site-controller@sha256:e6453fab518537a9852f5752183a6f4f701d4673d8f9d5ee9385fd7871437557
                 name: manager
                 securityContext:
@@ -339,19 +339,19 @@ spec:
     url: https://skupper.io
   relatedImages:
   - name: skupper-site-controller
-    image: quay.io/fgiorgetti/site-controller@sha256:a1ed604288f0fededfc654ae7eb3aff2046b1b3a89390a2d3dee2dc7210a60c7
+    image: blabla
   - name: skupper-router
-    image: quay.io/fgiorgetti/skupper-router@sha256:cbc9fc8e1adaabe0ecb6616223708780e2a9406704439f42e0e6b4779865caf0
+    image: blabla
   - name: skupper-service-controller 
-    image: quay.io/fgiorgetti/service-controller@sha256:5a2e03cddb009a6a0e4061e5d12c3409e70f11a86b0cd4c5886f0f5953016326
+    image: bla
   - name: skupper-config-sync
-    image: quay.io/fgiorgetti/config-sync@sha256:3041b2cdb9f3804242283e398be14a491da6009257f97ade0fe6debaa3c2b2c3
+    image: bla
   - name: skupper-flow-collector
-    image: quay.io/fgiorgetti/flow-collector@sha256:d3d6604417e5b14856860677a4c7cfd5d704dbfc2cbf0b9dce3a806656c2b11f
+    image: bla
   - name: ose-prometheus
-    image: quay.io/prometheus/prometheus@sha256:d2ab0a27783fd4ad96a8853e2847b99a0be0043687b8a5d1ebfb2dd3fa4fd1b8
+    image: bla
   - name: ose-oauth-proxy
-    image: quay.io/openshift/origin-oauth-proxy@sha256:a7dff785d821acc4b972d94964947713fade45f007dedb5deee17a2869bf5d24
+    image: bla 
   replaces: skupper-operator.v1.5.1
   skips:
   - skupper-operator.v1.4.0-rc2
