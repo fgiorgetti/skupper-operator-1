@@ -13,7 +13,9 @@ function error() {
 function getImageSHA() {
     IMAGE="$1"
     podman image pull ${IMAGE} > /dev/null 2>&1
-    podman image inspect --format='{{index .RepoDigests 0}}' ${IMAGE} || exit 1
+    DIGEST=$(podman image inspect --format='{{.Digest}}' ${IMAGE})
+    [[ $? -ne 0 ]] && exit 1
+    echo "${IMAGE//:*/@${DIGEST}}"
 }
 
 if ${INTERACTIVE}; then
