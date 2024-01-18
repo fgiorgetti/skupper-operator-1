@@ -10,7 +10,7 @@ newversion=os.getenv("NEW_VERSION")
 #
 # facts to be used in the csv
 #
-indeximage = "quay.io/skupper/skupper-operator-index:v" + newversion
+indeximage = "quay.io/fgiorgetti/skupper-operator-index:v" + newversion
 startingCSV = "skupper-operator.v" + newversion
 
 #

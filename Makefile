@@ -1,6 +1,6 @@
 VERSION := v1.5.2
-BUNDLE_IMG ?= quay.io/skupper/skupper-operator-bundle:$(VERSION)
-INDEX_IMG ?= quay.io/skupper/skupper-operator-index:$(VERSION)
+BUNDLE_IMG ?= quay.io/fgiorgetti/skupper-operator-bundle:$(VERSION)
+INDEX_IMG ?= quay.io/fgiorgetti/skupper-operator-index:$(VERSION)
 OPM_URL := https://github.com/operator-framework/operator-registry/releases/latest/download/linux-amd64-opm
 OPM := $(or $(shell which opm 2> /dev/null),./opm)
 CONTAINER_TOOL := podman

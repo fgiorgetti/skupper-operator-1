@@ -6,7 +6,7 @@ metadata:
     capabilities: Seamless Upgrades
     categories: Integration & Delivery, Networking, Streaming & Messaging
     certified: 'false'
-    containerImage: quay.io/skupper/site-controller@sha256:e6453fab518537a9852f5752183a6f4f701d4673d8f9d5ee9385fd7871437557
+    containerImage: quay.io/fgiorgetti/site-controller@sha256:e6453fab518537a9852f5752183a6f4f701d4673d8f9d5ee9385fd7871437557
     createdAt: '2024-01-15T15:14:25Z'
     description: Skupper Operator provides the ability to create a service network
     operators.operatorframework.io/builder: operator-sdk-v1.4.0+git
@@ -205,10 +205,10 @@ spec:
                     fieldRef:
                       fieldPath: metadata.annotations['olm.targetNamespaces']
                 - name: QDROUTERD_IMAGE
-                  value: quay.io/skupper/skupper-router@sha256:4f44d5a5d08f9419324d73f4e108246212c43c9cb1a5f5a5dceac2fce4a0bcea
+                  value: quay.io/fgiorgetti/skupper-router@sha256:4f44d5a5d08f9419324d73f4e108246212c43c9cb1a5f5a5dceac2fce4a0bcea
                 - name: SKUPPER_SERVICE_CONTROLLER_IMAGE
-                  value: quay.io/skupper/service-controller@sha256:c3326888b6612f3a3ef524ff4650e430a011fcc25c26cd6f79d9440bb0b267df
-                image: quay.io/skupper/site-controller@sha256:e6453fab518537a9852f5752183a6f4f701d4673d8f9d5ee9385fd7871437557
+                  value: quay.io/fgiorgetti/service-controller@sha256:c3326888b6612f3a3ef524ff4650e430a011fcc25c26cd6f79d9440bb0b267df
+                image: quay.io/fgiorgetti/site-controller@sha256:e6453fab518537a9852f5752183a6f4f701d4673d8f9d5ee9385fd7871437557
                 name: manager
                 securityContext:
                   allowPrivilegeEscalation: false

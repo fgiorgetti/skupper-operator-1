@@ -54,11 +54,11 @@ done
 [[ ${#errors} -gt 0 ]] && echo "The following variables are required: ${errors[@]}" && exit 1
 
 echo "Pulling images to determine their SHAs..."
-export SKUPPER_ROUTER_SHA=`getImageSHA quay.io/skupper/skupper-router:${SKUPPER_ROUTER_TAG}`
-export SITE_CONTROLLER_SHA=`getImageSHA quay.io/skupper/site-controller:${SKUPPER_CONTROL_TAG}`
-export SERVICE_CONTROLLER_SHA=`getImageSHA quay.io/skupper/service-controller:${SKUPPER_CONTROL_TAG}`
-export CONFIG_SYNC_SHA=`getImageSHA quay.io/skupper/config-sync:${SKUPPER_CONTROL_TAG}`
-export FLOW_COLLECTOR_SHA=`getImageSHA quay.io/skupper/flow-collector:${SKUPPER_CONTROL_TAG}`
+export SKUPPER_ROUTER_SHA=`getImageSHA quay.io/fgiorgetti/skupper-router:${SKUPPER_ROUTER_TAG}`
+export SITE_CONTROLLER_SHA=`getImageSHA quay.io/fgiorgetti/site-controller:${SKUPPER_CONTROL_TAG}`
+export SERVICE_CONTROLLER_SHA=`getImageSHA quay.io/fgiorgetti/service-controller:${SKUPPER_CONTROL_TAG}`
+export CONFIG_SYNC_SHA=`getImageSHA quay.io/fgiorgetti/config-sync:${SKUPPER_CONTROL_TAG}`
+export FLOW_COLLECTOR_SHA=`getImageSHA quay.io/fgiorgetti/flow-collector:${SKUPPER_CONTROL_TAG}`
 
 echo
 echo
