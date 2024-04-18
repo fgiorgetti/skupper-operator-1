@@ -1,6 +1,6 @@
-VERSION := v1.6.0
-BUNDLE_IMG ?= quay.io/skupper/skupper-operator-bundle:$(VERSION)
-INDEX_IMG ?= quay.io/skupper/skupper-operator-index:$(VERSION)
+VERSION := v1.6.1-rc
+BUNDLE_IMG ?= quay.io/fgiorgetti/skupper-operator-bundle:$(VERSION)
+INDEX_IMG ?= quay.io/fgiorgetti/skupper-operator-index:$(VERSION)
 OPM_URL := https://github.com/operator-framework/operator-registry/releases/latest/download/linux-amd64-opm
 OPM := $(or $(shell which opm 2> /dev/null),./opm)
 CONTAINER_TOOL := podman
@@ -11,6 +11,7 @@ all: index-build
 
 .PHONY: bundle-build ## Build the bundle image.
 bundle-build: test
+	$(CONTAINER_TOOL) buildx prune -af
 	@echo Building bundle image
 	$(CONTAINER_TOOL) buildx build --no-cache --platform ${PLATFORMS} --manifest skupper-operator-bundle -f bundle.Dockerfile -t $(BUNDLE_IMG) .
 	@echo Pushing $(BUNDLE_IMG)
