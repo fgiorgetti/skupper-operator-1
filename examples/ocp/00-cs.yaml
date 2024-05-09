@@ -4,5 +4,5 @@ metadata:
   name: skupper-operator
   namespace: openshift-marketplace
 spec:
-  image: quay.io/fgiorgetti/skupper-operator-index:v1.6.1-rc
+  image: quay.io/fgiorgetti/skupper-operator-index:v2.0.0-rc
   sourceType: grpc

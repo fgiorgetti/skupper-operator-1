@@ -1,4 +1,4 @@
-VERSION := v1.6.1-rc
+VERSION := v2.0.0-rc
 BUNDLE_IMG ?= quay.io/fgiorgetti/skupper-operator-bundle:$(VERSION)
 INDEX_IMG ?= quay.io/fgiorgetti/skupper-operator-index:$(VERSION)
 OPM_URL := https://github.com/operator-framework/operator-registry/releases/latest/download/linux-amd64-opm
@@ -32,6 +32,12 @@ index-build: bundle-build opm-download
 	@echo Adding bundle to the catalog
 	$(OPM) render $(BUNDLE_IMG) --output yaml >> $(CATALOG_YAML)
 	$(OPM) validate skupper-operator-index/
+	@echo Building index image
+	$(CONTAINER_TOOL) buildx build --no-cache --platform ${PLATFORMS} --manifest skupper-operator-index -f skupper-operator-index.Dockerfile -t $(INDEX_IMG) .
+	@echo Pushing $(INDEX_IMG)
+	$(CONTAINER_TOOL) manifest push --all skupper-operator-index $(INDEX_IMG)
+
+index-push-force:
 	@echo Building index image
 	$(CONTAINER_TOOL) buildx build --no-cache --platform ${PLATFORMS} --manifest skupper-operator-index -f skupper-operator-index.Dockerfile -t $(INDEX_IMG) .
 	@echo Pushing $(INDEX_IMG)
